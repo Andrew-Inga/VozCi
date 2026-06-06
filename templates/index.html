@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VozCi - Voz del Ciudadano</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 900px; margin: 0 auto; padding: 20px; background-color: #f8f9fa;}
+        .alert-success { background-color: #d1e7dd; color: #0f5132; padding: 15px; border-radius: 4px; display: none; margin-bottom: 20px; border: 1px solid #badbcc;}
+        .card { background: white; border: 1px solid #dee2e6; border-radius: 8px; margin-bottom: 25px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.05);}
+        .card-header { background-color: #0d6efd; color: white; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center;}
+        .card-header h2 { margin: 0; font-size: 1.5rem; }
+        .badge-active { background-color: #198754; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold;}
+        .badge-frozen { background-color: #dc3545; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold;}
+        .card-body { padding: 20px; }
+        .meta-info { color: #333; font-size: 0.95rem; margin-bottom: 20px; }
+        .date-box { margin: 15px 0; padding: 15px; background-color: #e9ecef; border-left: 5px solid #0d6efd; border-radius: 4px;}
+        .section-title { font-size: 1.2rem; font-weight: bold; margin: 20px 0 10px 0; color: #333;}
+        .content-box { background-color: #f8f9fa; padding: 15px; border-radius: 5px; border: 1px solid #e9ecef; font-family: monospace; white-space: pre-wrap;}
+        .btn-sign { background-color: #f8f9fa; color: #333; border: 1px solid #ccc; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem; width: 100%; margin-top: 15px;}
+        .btn-sign:hover { background-color: #e2e6ea; }
+        .btn-sign:disabled { background-color: #e9ecef; color: #6c757d; cursor: not-allowed; }
+        .form-group { margin-bottom: 15px; }
+        .form-control { width: 100%; padding: 10px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box;}
+        .btn-primary { background-color: #0d6efd; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; width: 100%; font-size: 1rem;}
+        .upload-section { background-color: #fff3cd; padding: 15px; border-radius: 5px; margin-top: 20px; border: 1px dashed #ffecb5;}
+    </style>
+</head>
+<body>
+
+    <div id="alert-msg" class="alert-success">
+        Firma y foto registradas correctamente.
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            <h3 style="margin-top:0;">Registrar Nueva Iniciativa Normativa</h3>
+            <div class="form-group">
+                <input type="text" id="in-titulo" class="form-control" placeholder="Título de la Propuesta Normativa">
+            </div>
+            <div class="form-group">
+                <textarea id="in-motivos" class="form-control" rows="3" placeholder="Exposición de Motivos (Razones que justifican el proyecto)..."></textarea>
+            </div>
+            <div class="form-group">
+                <textarea id="in-articulado" class="form-control" rows="3" placeholder="Articulado (Ej: Artículo 1.- El Estado garantizará...)"></textarea>
+            </div>
+            <button class="btn-primary" onclick="crearIniciativa()">Publicar Propuesta</button>
+        </div>
+    </div>
+
+    <div id="lista-iniciativas"></div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
